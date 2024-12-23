@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
+    <script>
+        // !!!!Первое модальное окно
+        function handleSubmit(event) {
+            event.preventDefault(); // Предотвращает перезагрузку страницы
+            // Ваш код обработки отправки данных формы
+
+            // Сообщение об успешной отправке
+            alert("Форма успешно отправлена!");
+
+            // Очистка формы
+            document.getElementById('contactForm').reset();
+        }
+        function updatePhoneCode() {
+            const countrySelect = document.getElementById('country');
+            const phoneInput = document.getElementById('phone');
+            const countryCode = countrySelect.value;
+
+            // Заполнение поля ввода номера телефона кодом страны
+            phoneInput.value = countryCode;
+        }
+        function check() {
+            var submit = document.getElementsByName('submit')[0];
+            var submit2 = document.getElementsByName('submit2')[0];
+            var submit3 = document.getElementsByName('submit3')[0];
+            if (document.getElementById('popd').checked) {
+                submit.disabled = '';
+            }
+            else {
+                submit.disabled = 'disabled';
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+        <!-- Header -->
+        <header class="py-3 border-bottom">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="pngwing.com.png" alt="Bibizyan" width="50" class="me-2">
+                    <p class="mb-0">Bibizyan</p>
+                </div>
+                <div>
+                    <p class="mb-0">Группа ЭФБО-04-23</p>
+                    <p class="mb-0">Набиев Гафур Галибович</p>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="position: fixed; top: 90px; width: 100%; display: flex; justify-content: flex-start; height: 30px;">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="1sem.html">Первый семестр</a></li>
+                        <li class="nav-item"><a class="nav-link" href="2sem.html">Второй семестр</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="service.html">Услуги</a></li>
+                        <li class="nav-item"><a class="nav-link" href="log_in.html">Авторизация</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <main style="display: flex; height: 100%">
+        <aside class="aside1">
+            <h4>Навигация по странице</h4>
+
+        </aside>
+        <div class="border">
+            <div class="grid-container">
+                <div class="service">
+                    <img src="photo_2024-09-06_20-28-06.jpg" class="scale"
+                        style="width: 100%; height: auto; border-radius: 30px;">
+                    <!--Первое модальное окно-->
+                    <button type="button" onclick="window.myDialog.showModal()" class="button">
+                        <div style="width: 100%; text-align: center;">Сайт-визитка</div>
+                    </button>
+                    <dialog id="myDialog" class="dialog">
+                        <button type="button" onclick="window.myDialog.close()">
+                            Закрыть
+                        </button>
+                        <h2>Форма обратной связи</h2>
+                        <form id="contactForm" onsubmit="handleSubmit(event)">
+                            <div style="display: flex; flex-direction: column; margin-left: 15px;">
+                                <!-- Поле для ввода имени -->
+                                <label for="name" style="margin-bottom: 15px;">Имя:</label>
+                                <input class="input" type="text" id="name" name="name" required
+                                    style="margin-bottom: 15px;" placeholder="Введите свое имя">
+                                <!-- Поле для ввода фамилии -->
+                                <label for="surname" style="margin-bottom: 15px;">Фамилия:</label>
+                                <input class="input" type="text" id="surname" name="surname" required
+                                    style="margin-bottom: 15px;" placeholder="Введите свою фамилию">
+                                <!-- Поле для ввода электронной почты -->
+                                <label for="email" style="margin-bottom: 15px;">Электронная почта:</label>
+                                <input class="input" type="email" id="email" name="email" required
+                                    style="margin-bottom: 15px;" placeholder="example@mail.com">
+                                <label for="country " style="margin-bottom: 15px;">Выберите страну:</label>
+                                <select id="country" name="country" onchange="updatePhoneCode()" required>
+                                    <option value="">-- Выберите страну --</option>
+                                    <option value="+1">🙍🏿‍♂️ США (+1)</option>
+                                    <option value="+44">💂 Великобритания (+44)</option>
+                                    <option value="+7"> 🐻 Россия (+7)</option>
+                                    <option value="+49">🍺 Германия (+49)</option>
+                                    <option value="+33">🥐 Франция (+33)</option>
+                                    <option value="+375">🥔 Беларусь (+375)</option>
+                                    <option value="+77">🐴 Казахстан (+77)</option>
+                                    <option value="+81">🔴 Япония (+81)</option>
+                                    <option value="+998">☀️ Узбекистан (+998)</option>
+                                    <!-- Можно добавить больше стран -->
+                                </select> <br><br>
+                                <label for="phone" style="margin-bottom: 15px;">Номер телефона:</label>
+                                <section style="display: flex;">
+                                    <input class="input" type="text" id="phone" pattern="^\+?[0-9]*$" required
+                                        placeholder="Введите номер телефона" maxlength="13" minlength="7"
+                                        style="margin-bottom: 15px;">
+                                </section>
+                                <label for="date">Выберите дату:</label>
+                                <input type="date" id="date" name="date" required><br><br>
+                                <!-- Многострочное текстовое поле для комментариев -->
+                                <label for="comments" style="margin-bottom: 15px;">Комментарии:</label>
+                                <textarea id="comments" name="comments"
+                                    style="margin-bottom: 15px; resize: none; height: 150px; width: 300px;"
+                                    placeholder="Напишите сюда название услуги которую Вы выбрали"></textarea>
+                            </div>
+                            <!-- Кнопка отправки формы -->
+                            <input type="checkbox" id="popd" onclick="check();" value="" autocomplete="off" />
+                            Даю согласие на обработку персональных данных
+                            <br><br>
+                            <input type="submit" name="submit" class="submit" disabled="" value="Отправить"
+                                style="border-radius: 30px; background-color: greenyellow;" />
+                        </form>
+                </div>
+                </dialog>
+                <div class="service">
+                    <img src="photo_2024-09-06_20-28-06.jpg" class="scale"
+                        style="width: 100%; height: auto; border-radius: 30px">
+                    <!--Второе модальное окно-->
+                    <button type="button" onclick="window.myDialog.showModal()" class="button">
+                        <div style="width: 100%; text-align: center; ">Кооперативный сайт</div>
+                    </button>
+                </div>
+                <div class="service">
+                    <img src="photo_2024-09-06_20-28-06.jpg" class="scale"
+                        style="width: 100%; height: auto; border-radius: 30px">
+                    <!--Третье модальное окно-->
+                    <button type="button" onclick="window.myDialog.showModal()" class="button">
+                        <div style="width: 100%; text-align: center; ">Интернет-магазин</div>
+                    </button>
+                </div>
+            </div>
+            <div style="text-align: center; font-size: xx-large;">Lorem ipsum dolor sit amet consectetur adipisicing
+                elit.
+                Obcaecati voluptatem aut animi, facere qui nesciunt, at quae alias molestiae ducimus, quibusdam
+                distinctio.
+                Et voluptate quisquam quam doloribus ipsum ad tempore.
+                Expedita, deserunt. Ipsa perferendis beatae fugit tenetur rerum ad! Quos iure, exercitationem ducimus
+                voluptates pariatur perspiciatis, quam hic veniam consectetur tenetur harum nobis, similique qui ipsum
+                nulla. Tempore, libero nobis.
+                Nisi id quod consequatur fugit voluptates atque accusamus! Sit id minima minus excepturi natus
+                cupiditate
+                magni eius, exercitationem explicabo rerum. Harum vero repudiandae eligendi eaque sed nisi quisquam id
+                neque?
+                Facere harum, optio quibusdam vero perferendis possimus rem tempora minima? Nemo enim nulla dolor
+                tempore
+                eius. Similique amet delectus veritatis fuga odit assumenda, est maxime laudantium, sapiente itaque
+                voluptatem architecto.
+                Deleniti fugiat facere, maxime nisi eos veritatis nobis est ea vel quidem nam dicta, adipisci nostrum
+                possimus velit itaque atque in aliquam! Accusamus quisquam expedita sint cum eveniet harum hic.
+                Saepe enim ipsam modi tempore nostrum, earum nihil ea ipsum quibusdam reprehenderit ducimus placeat
+                perferendis. Quisquam quaerat animi quibusdam ipsum voluptates neque quod molestiae? Aspernatur culpa ex
+                quis debitis eos!
+            </div>
+            <div style="text-align: center; font-size: xx-large;">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet quaerat molestiae quas corrupti
+                perspiciatis. Quam fuga eum ratione, obcaecati porro non ipsam beatae quas? Deleniti, dolores officiis
+                iusto
+                perspiciatis recusandae explicabo omnis ad aliquid beatae incidunt et ab ullam blanditiis laborum. Rem
+                sed
+                neque possimus maiores alias voluptatem laboriosam sapiente! Obcaecati, laudantium aspernatur. Tempore
+                ducimus hic, natus deserunt ratione sit similique incidunt recusandae at dignissimos tenetur maiores.
+                Earum
+                esse accusamus, nihil distinctio culpa laboriosam, assumenda ullam harum iure ipsam ea enim in. In
+                dolores
+                modi blanditiis impedit ad alias commodi minus fugiat veritatis. Quibusdam ducimus numquam quod culpa,
+                error
+                tenetur ipsam. Similique officia nemo, labore dolorem eveniet sapiente explicabo voluptatum est, nam
+                doloremque aperiam veniam nulla velit, a accusamus beatae quos perferendis recusandae harum sunt ipsa
+                incidunt! Maiores, veniam adipisci? Quisquam ut eos soluta delectus accusamus? Quibusdam ab sint
+                voluptatum
+                pariatur inventore, magnam ipsum! Qui accusantium sit facilis aliquid voluptatum!
+            </div>
+        </div>
+        <button id="scrollToTopBtn">Наверх</button>
+            <script>
+                // Получаем кнопку
+                const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                // Показываем кнопку, когда скроллим вниз
+                window.onscroll = function () {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        scrollToTopBtn.style.display = "block";
+                    } else {
+                        scrollToTopBtn.style.display = "none";
+                    }
+                };
+
+                // Скроллим наверх при нажатии кнопки
+                scrollToTopBtn.onclick = function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                };
+            </script>
+ 
+
+
+    </main>
+    <footer>
+        <div style="text-align: center;">
+            &copy; Набиев Гафур Галибович
+            <section>
+                <a href="https://t.me/Rastishka000" target="_blank"> <img src="tg.png" alt="Tg" width="30px"></a>
+                <a href="https://vk.com/rastishka190" target="_blank" style="margin-left: 10px;"> <img src="vk.png"
+                        alt="Vk" width="30px"></a>
+            </section>
+        </div>
+    </footer>
+</body>
+
+</html>

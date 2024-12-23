@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+        <!-- Header -->
+        <header class="py-3 border-bottom">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="pngwing.com.png" alt="Bibizyan" width="50" class="me-2">
+                    <p class="mb-0">Bibizyan</p>
+                </div>
+                <div>
+                    <p class="mb-0">Группа ЭФБО-04-23</p>
+                    <p class="mb-0">Набиев Гафур Галибович</p>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link " href="1sem.html">Первый семестр</a></li>
+                        <li class="nav-item"><a class="nav-link" href="2sem.html">Второй семестр</a></li>
+                        <li class="nav-item"><a class="nav-link" href="service.html">Услуги</a></li>
+                        <li class="nav-item"><a class="nav-link" href="log_in.html">Авторизация</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+    <main class="container">
+        <div style="display: flex; height: 100%">
+            <aside class="aside1">
+                <h4>Навигация по странице</h4>
+                <a href="#front_link" ; style="margin-bottom: 15px; text-decoration: none;">Фронтенд</a>
+                <a href="#back_link" ; style="text-decoration: none;">Бэкенд</a>
+            </aside>
+            <div class="border">
+                <h2 style="text-align: center;">Добро пожаловать на мой сайт!</h2>
+                <article style="display: flex; justify-content: space-between; padding-right: 20px;">
+                    <ul>
+                        <h3>
+                            Меня зовут Гафур и я начинающий специалист по веб-разработке
+                        </h3>
+                    </ul>
+                    <img src="photo.png" alt="я" width="150px"
+                        style="border: 5px solid #696969; border-end-end-radius: 30px; border-top-left-radius: 30px; border-end-start-radius: 30px; border-top-right-radius: 30px;">
+                </article>
+
+                <div>
+                    <section style="display: grid; place-items: center;">
+                        <h3 id="front_link" class="link">Фронтенд</h3>
+                        <article style="font-size: x-large; text-align: center;">Фронтенд (или клиентская часть) - это
+                            то, что видит пользователь. Он включает в себя все визуальные элементы
+                            веб-сайта или приложения: кнопки, формы, изображения и текст. Фронтенд разработчики
+                            используют языки
+                            разметки и стилизации, такие как HTML, CSS и JavaScript, чтобы создавать интерактивные и
+                            привлекательные
+                            интерфейсы. Основная задача фронтенда - обеспечить удобство использования и эстетическую
+                            привлекательность.</article>
+                        <video src="sticker_1.mp4" muted autoplay loop
+                            style="border-radius: 30px; width:300px; height: 300px;"></video>
+                    </section>
+                </div>
+                <br>
+                <div>
+                    <section style="display: grid; place-items: center;">
+                        <h3 id="back_link" class="link">Бэкенд</h3>
+                        <article style="font-size: x-large; text-align: center;">Бэкенд (или серверная часть) - это "за
+                            кулисами" веб-приложений. Он отвечает за обработку данных, управление
+                            пользователями и взаимодействие с базами данных. Бэкенд разработчики используют языки
+                            программирования, такие
+                            как Python, Ruby, Java или PHP, а также фреймворки и базы данных для создания логики
+                            приложения. Основная задача
+                            бэкенда - обеспечить стибтльную работу приложения и безопасноть данных.</article>
+                        <video src="sticker (2).mp4" muted autoplay loop
+                            style="border-radius: 30px; width:300px; height: 300px;"></video>
+                    </section>
+                </div>
+                <div>
+                    <article style="font-size: x-large; text-align: center;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laborum ipsa sint repellat
+                        voluptatibus, tenetur ullam voluptate quos distinctio dicta, ratione adipisci consequuntur
+                        ex
+                    </article>
+                </div>
+            </div>
+            <button id="scrollToTopBtn">Наверх</button>
+
+                
+
+                <script>
+                    // Получаем кнопку
+                    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                    // Показываем кнопку, когда скроллим вниз
+                    window.onscroll = function () {
+                        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                            scrollToTopBtn.style.display = "block";
+                        } else {
+                            scrollToTopBtn.style.display = "none";
+                        }
+                    };
+
+                    // Скроллим наверх при нажатии кнопки
+                    scrollToTopBtn.onclick = function () {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    };
+                </script>
+
+
+
+        </div>
+    </main>
+    <footer>
+        <div style="text-align: center;">
+            &copy; Набиев Гафур Галибович
+            <section>
+                <a href="https://t.me/Rastishka000" target="_blank"> <img src="tg.png" alt="Tg" width="30px"></a>
+                <a href="https://vk.com/rastishka190" target="_blank" style="margin-left: 10px;"> <img src="vk.png" alt="Vk"
+                        width="30px"></a>
+            </section>
+        </div>
+
+
+    </footer>
+</body>
+
+</html>
